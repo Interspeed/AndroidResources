@@ -1,0 +1,387 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1561\cocoasubrtf100
+{\fonttbl\f0\fnil\fcharset0 Menlo-Regular;\f1\fswiss\fcharset0 Helvetica;}
+{\colortbl;\red255\green255\blue255;\red0\green116\blue0;\red255\green255\blue255;\red100\green56\blue32;
+\red196\green26\blue22;\red28\green0\blue207;}
+{\*\expandedcolortbl;;\csgenericrgb\c0\c45600\c0;\csgenericrgb\c100000\c100000\c100000;\csgenericrgb\c39100\c22000\c12500;
+\csgenericrgb\c77000\c10200\c8600;\csgenericrgb\c11000\c0\c81000;}
+\paperw11900\paperh16840\margl1440\margr1440\vieww27460\viewh18380\viewkind0
+\deftab692
+\pard\tx692\pardeftab692\pardirnatural\partightenfactor0
+
+\f0\fs28 \cf2 \cb3 //
+\f1\fs24 \cf0 \
+
+\f0\fs28 \cf2 //  Kotha-Prefix.pch
+\f1\fs24 \cf0 \
+\
+
+\f0\fs28 \cf2 /* *  **************************************************************************
+\f1\fs24 \cf0 \
+
+\f0\fs28 \cf2  *  * Copyright (C) kothaapp.com - All Rights Reserved.
+\f1\fs24 \cf0 \
+
+\f0\fs28 \cf2  *  *
+\f1\fs24 \cf0 \
+
+\f0\fs28 \cf2  *  * This file is a part of KOTHA APP project.
+\f1\fs24 \cf0 \
+
+\f0\fs28 \cf2  *  *
+\f1\fs24 \cf0 \
+
+\f0\fs28 \cf2  *  * Unauthorized copying of this file, via any medium is strictly prohibited
+\f1\fs24 \cf0 \
+
+\f0\fs28 \cf2  *  * Proprietary and confidential.
+\f1\fs24 \cf0 \
+
+\f0\fs28 \cf2  *  ****************************************************************************
+\f1\fs24 \cf0 \
+
+\f0\fs28 \cf2  */
+\f1\fs24 \cf0 \
+
+\f0\fs28 \cf2 /*
+\f1\fs24 \cf0 \
+
+\f0\fs28 \cf2  *  ****************************************************************************
+\f1\fs24 \cf0 \
+
+\f0\fs28 \cf2  *  * Created by : Mostafiz on 17/12/2016
+\f1\fs24 \cf0 \
+
+\f0\fs28 \cf2  *  * Email : mostafizurku26@gmail.com
+\f1\fs24 \cf0 \
+
+\f0\fs28 \cf2  *  *
+\f1\fs24 \cf0 \
+
+\f0\fs28 \cf2  *  * Last edited by : Mostafiz on 17/12/2016
+\f1\fs24 \cf0 \
+
+\f0\fs28 \cf2  *  * Last reviewed by : Mostafiz on 17/12/2016
+\f1\fs24 \cf0 \
+
+\f0\fs28 \cf2  *  ****************************************************************************
+\f1\fs24 \cf0 \
+
+\f0\fs28 \cf2  */
+\f1\fs24 \cf0 \
+\
+\
+
+\f0\fs28 \cf4 #ifndef Kotha_Prefix_pch
+\f1\fs24 \cf0 \
+
+\f0\fs28 \cf4 #define Kotha_Prefix_pch
+\f1\fs24 \cf0 \
+\
+\
+
+\f0\fs28 \cf4 #define     TEMP_DIRECTORY_PATH @\cf5 "KOTHA_APP/TEMP_FILES"
+\f1\fs24 \cf0 \
+
+\f0\fs28 \cf4 #define     USER_IMAGE_DIRECTORY_PATH @\cf5 "KOTHA_APP/USER_IMAGE"
+\f1\fs24 \cf0 \
+
+\f0\fs28 \cf4 #define     FILE_DIRECTORY @\cf5 "KOTHA_APP/FILES"
+\f1\fs24 \cf0 \
+
+\f0\fs28 \cf4 #define     ASSET_URL_CHECK_VALUE @\cf5 "assets-library://asset/asset"
+\f1\fs24 \cf0 \
+\
+
+\f0\fs28 \cf4 #define     INVITE_MESSAGE              [NSString stringWithFormat:@\cf5 "Hey, your contact %@ would like you to join in Kotha App. If you are using iPhone, download the app from App Store https://itunes.apple.com/US/app/id1188060798?mt=8 and start messaging and sharing"\cf4 , [UserPreferences getUserName]]
+\f1\fs24 \cf0 \
+\
+\
+
+\f0\fs28 \cf4 #define     BASE_URL                        [NSString stringWithFormat:@\cf5 "%@"\cf4 ,[UserPreferences getBaseURL]]
+\f1\fs24 \cf0 \
+
+\f0\fs28 \cf4 #define     SOCKET_URL                      [NSString stringWithFormat:@\cf5 "%@"\cf4 ,[UserPreferences getChatURL]]
+\f1\fs24 \cf0 \
+
+\f0\fs28 \cf4 #define     REGISTRATION_URL                [NSString stringWithFormat:@\cf5 "%@/mobile/api/registration"\cf4 ,[UserPreferences getBaseURL]]
+\f1\fs24 \cf0 \
+
+\f0\fs28 \cf4 #define     AUTHORIZATION_CODE_URL          [NSString stringWithFormat:@\cf5 "%@/globalAPI/mobile/oauth2/authorize?client_id=%@&response_type=code&redirect_uri=%@/globalAPI/mobile/android/code"\cf4 ,[UserPreferences getBaseURL],AUTO_USER_ID, [UserPreferences getBaseURL]]
+\f1\fs24 \cf0 \
+
+\f0\fs28 \cf4 #define     ACCESS_TOKEN_URL                [NSString stringWithFormat:@\cf5 "%@/globalAPI/mobile/oauth2/token"\cf4 ,[UserPreferences getBaseURL]]
+\f1\fs24 \cf0 \
+
+\f0\fs28 \cf4 #define     GET_USER_URL                    [NSString stringWithFormat:@\cf5 "%@/mobile/api/get_user"\cf4 ,[UserPreferences getBaseURL]]
+\f1\fs24 \cf0 \
+
+\f0\fs28 \cf2 //#define     REG_SYNC_CONTACTS_URL_DEV     [NSString stringWithFormat:@"%@/mobile/api/registration_sync_contacts",[UserPreferences getBaseURL]]
+\f1\fs24 \cf0 \
+
+\f0\fs28 \cf4 #define     REG_SYNC_CONTACTS_URL_STAGING   [NSString stringWithFormat:@\cf5 "%@/mobile/api/registration_sync_contacts"\cf4 ,@\cf5 "https://pbstaging.kothaapp.com"\cf4 ]
+\f1\fs24 \cf0 \
+
+\f0\fs28 \cf4 #define     REG_SYNC_CONTACTS_URL_PRO       [NSString stringWithFormat:@\cf5 "%@/mobile/api/registration_sync_contacts"\cf4 ,@\cf5 "https://pb.kothaapp.com"\cf4 ]
+\f1\fs24 \cf0 \
+
+\f0\fs28 \cf4 #define     SYNC_CONTACTS_URL_DEV           [NSString stringWithFormat:@\cf5 "%@/mobile/api/sync_contacts"\cf4 ,[UserPreferences getBaseURL]]
+\f1\fs24 \cf0 \
+
+\f0\fs28 \cf4 #define     SYNC_CONTACTS_URL_STAGING       [NSString stringWithFormat:@\cf5 "%@/mobile/api/sync_contacts"\cf4 ,@\cf5 "https://pbstaging.kothaapp.com"\cf4 ]
+\f1\fs24 \cf0 \
+
+\f0\fs28 \cf4 #define     SYNC_CONTACTS_URL_PRO           [NSString stringWithFormat:@\cf5 "%@/mobile/api/sync_contacts"\cf4 ,@\cf5 "https://pb.kothaapp.com"\cf4 ]
+\f1\fs24 \cf0 \
+
+\f0\fs28 \cf4 #define     SYNC_CONTACTS_URL_AWS           [NSString stringWithFormat:@\cf5 "%@/mobile/api/sync_contacts"\cf4 ,@\cf5 "http://phonebook.kotha.im"\cf4 ]
+\f1\fs24 \cf0 \
+\
+
+\f0\fs28 \cf4 #define     CHECK_SYNC_FLAG                 [NSString stringWithFormat:@\cf5 "%@/mobile/api/sync_flag_status"\cf4 ,[UserPreferences getBaseURL]]
+\f1\fs24 \cf0 \
+
+\f0\fs28 \cf4 #define     SET_SYNC_FLAG                   [NSString stringWithFormat:@\cf5 "%@/mobile/api/set_sync_flag_for_friends"\cf4 ,[UserPreferences getBaseURL]]
+\f1\fs24 \cf0 \
+\
+
+\f0\fs28 \cf4 #define     UPDATE_USER_INFO                [NSString stringWithFormat:@\cf5 "%@/mobile/api/update_user_info"\cf4 ,[UserPreferences getBaseURL]]
+\f1\fs24 \cf0 \
+
+\f0\fs28 \cf4 #define     GET_USER_INFO_BY_ID             [NSString stringWithFormat:@\cf5 "%@/mobile/api/get_users_by_ids"\cf4 ,[UserPreferences getBaseURL]]
+\f1\fs24 \cf0 \
+
+\f0\fs28 \cf4 #define     GET_USER_IDS                    [NSString stringWithFormat:@\cf5 "%@/mobile/api/get_user_ids"\cf4 ,[UserPreferences getBaseURL]]
+\f1\fs24 \cf0 \
+
+\f0\fs28 \cf4 #define     FILE_UPLOAD_URL                 [NSString stringWithFormat:@\cf5 "%@/mobile/api/chatFileUpload"\cf4 ,[UserPreferences getBaseURL]]
+\f1\fs24 \cf0 \
+\
+
+\f0\fs28 \cf4 #define     FETCH_OFFLINE_MESSAGE           [NSString stringWithFormat:@\cf5 "%@/mobile/api/messages/unread/-1"\cf4 ,[UserPreferences getBaseURL]]
+\f1\fs24 \cf0 \
+
+\f0\fs28 \cf4 #define     OFFLINE_MESSAGE_AMOUNT          [NSString stringWithFormat:@\cf5 "%@/mobile/api/messages/unreadTotal"\cf4 ,[UserPreferences getBaseURL]]
+\f1\fs24 \cf0 \
+
+\f0\fs28 \cf4 #define     OFFLINE_MESSAGE_STATUS          [NSString stringWithFormat:@\cf5 "%@/mobile/api/messages/status"\cf4 ,[UserPreferences getBaseURL]]
+\f1\fs24 \cf0 \
+
+\f0\fs28 \cf4 #define     GET_FRIENDS_INFO                [NSString stringWithFormat:@\cf5 "%@/mobile/api/profile/friends"\cf4 ,[UserPreferences getBaseURL]]
+\f1\fs24 \cf0 \
+
+\f0\fs28 \cf4 #define     CLEAR_FRIEND_LIST               [NSString stringWithFormat:@\cf5 "%@/mobile/api/clearFriendList"\cf4 ,[UserPreferences getBaseURL]]
+\f1\fs24 \cf0 \
+\
+
+\f0\fs28 \cf4 #define     GET_NEARBY_USERS                [NSString stringWithFormat:@\cf5 "%@/mobile/api/nearby_users"\cf4 ,[UserPreferences getBaseURL]]
+\f1\fs24 \cf0 \
+\
+
+\f0\fs28 \cf2 // Groups
+\f1\fs24 \cf0 \
+
+\f0\fs28 \cf4 #define     GET_POST_GROUP                  [NSString stringWithFormat:@\cf5 "%@/mobile/api/groups"\cf4 ,[UserPreferences getBaseURL]]
+\f1\fs24 \cf0 \
+
+\f0\fs28 \cf4 #define     GET_GROUP_MEMBERS               [NSString stringWithFormat:@\cf5 "%@/mobile/api/groups/members"\cf4 ,[UserPreferences getBaseURL]]
+\f1\fs24 \cf0 \
+
+\f0\fs28 \cf4 #define     GET_GROUP_REQUESTS              [NSString stringWithFormat:@\cf5 "%@/mobile/api/groups/requests"\cf4 ,[UserPreferences getBaseURL]]
+\f1\fs24 \cf0 \
+
+\f0\fs28 \cf4 #define     ADD_TO_GROUP                    [NSString stringWithFormat:@\cf5 "%@/mobile/api/groups/add"\cf4 ,[UserPreferences getBaseURL]]
+\f1\fs24 \cf0 \
+
+\f0\fs28 \cf4 #define     RESPONSE_ADD_GROUP              [NSString stringWithFormat:@\cf5 "%@/mobile/api/groups/add/response"\cf4 ,[UserPreferences getBaseURL]]
+\f1\fs24 \cf0 \
+
+\f0\fs28 \cf4 #define     INVITE_TO_GROUP                 [NSString stringWithFormat:@\cf5 "%@/mobile/api/groups/invite"\cf4 ,[UserPreferences getBaseURL]]
+\f1\fs24 \cf0 \
+
+\f0\fs28 \cf4 #define     RESPONSE_INVITE_GROUP           [NSString stringWithFormat:@\cf5 "%@/mobile/api/groups/invite/response"\cf4 ,[UserPreferences getBaseURL]]
+\f1\fs24 \cf0 \
+
+\f0\fs28 \cf4 #define     LEAVE_GROUP                     [NSString stringWithFormat:@\cf5 "%@/mobile/api/groups/leave"\cf4 ,[UserPreferences getBaseURL]]
+\f1\fs24 \cf0 \
+
+\f0\fs28 \cf4 #define     GET_MODIFIED_MESSAGE_LIST       [NSString stringWithFormat:@\cf5 "%@/mobile/api/getModifiedMessageList"\cf4 ,[UserPreferences getBaseURL]]
+\f1\fs24 \cf0 \
+
+\f0\fs28 \cf4 #define     GET_NEW_MESSAGE_LIST            [NSString stringWithFormat:@\cf5 "%@/mobile/api/getNewMessageList"\cf4 ,[UserPreferences getBaseURL]]
+\f1\fs24 \cf0 \
+
+\f0\fs28 \cf4 #define     GET_MODIFIED_MESSAGE_AMOUNT     [NSString stringWithFormat:@\cf5 "%@/mobile/api/getModifiedGroupMessageCount"\cf4 ,[UserPreferences getBaseURL]]
+\f1\fs24 \cf0 \
+
+\f0\fs28 \cf4 #define     GET_NEW_MESSAGE_AMOUNT          [NSString stringWithFormat:@\cf5 "%@/mobile/api/getNewGroupMessageCount"\cf4 ,[UserPreferences getBaseURL]]
+\f1\fs24 \cf0 \
+
+\f0\fs28 \cf4 #define     UPDATE_MODIFIED_TIME            [NSString stringWithFormat:@\cf5 "%@/mobile/api/set_last_activity_time"\cf4 ,[UserPreferences getBaseURL]]
+\f1\fs24 \cf0 \
+\
+\
+
+\f0\fs28 \cf4 #define     GET_PUSH_ACCESS_TOKEN           [NSString stringWithFormat:@\cf5 "%@/mobile/api/getPushAccessToken"\cf4 ,[UserPreferences getBaseURL]]
+\f1\fs24 \cf0 \
+
+\f0\fs28 \cf4 #define     FIREBASE_MESSAGING_URL          @\cf5 "https://fcm.googleapis.com/fcm/send"
+\f1\fs24 \cf0 \
+
+\f0\fs28 \cf2 //#define     FIREBASE_SERVER_KEY             @"key = AIzaSyBnobla78JH35gsGYKDbErANeVm_CYpWhY"
+\f1\fs24 \cf0 \
+
+\f0\fs28 \cf4 #define     FIREBASE_SERVER_KEY             @\cf5 "key = AAAAJgFIF8Q:APA91bFBqmxxIU0qxTUNfeURo_ei-ryfSqmUzIt7QSFjYi4DIpGsblsr8CPhpoIbmcgSNL9QIP3I9je0hY5MIPqw14AunBWJ-CmX5LWwn72qpkpT1AkN7Zt_ySeGsm0CT53QH0JC4CMW0-hTb3HrWv4XFZ4jRDfhHQ"
+\f1\fs24 \cf0 \
+
+\f0\fs28 \cf4 #define     API_KEY                         @\cf5 "AIzaSyBPCpR_mbH1fmdgyeAMpdykFgrShrTncHk"
+\f1\fs24 \cf0 \
+
+\f0\fs28 \cf4 #define     TRANSLITERATION_URL             @\cf5 "https://inputtools.google.com/request?text=%@&itc=bn-t-i0-und&num=13&cp=0&cs=0&ie=utf-8&oe=utf-8&app=demopage"
+\f1\fs24 \cf0 \
+\
+\
+
+\f0\fs28 \cf4 #define     GET_FILE_UPLOAD_URL_S3          @\cf5 "https://skeleton.lokkhi.io/getS3FileUploadUrl"
+\f1\fs24 \cf0 \
+\
+
+\f0\fs28 \cf4 #define     APP_THEME_COLOR                 [UIColor colorWithRed:\cf6 0\cf4 /\cf6 255.0\cf4  green:\cf6 130\cf4 /\cf6 255.0\cf4  blue:\cf6 115\cf4 /\cf6 255.0\cf4  alpha:\cf6 1\cf4 ]
+\f1\fs24 \cf0 \
+\
+
+\f0\fs28 \cf4 #define     KOTHA_STICKER                   @\cf5 "data:sticker"
+\f1\fs24 \cf0 \
+\
+
+\f0\fs28 \cf4 #define     AUTO_USER_ID                    @\cf5 "1235"
+\f1\fs24 \cf0 \
+
+\f0\fs28 \cf4 #define     AUTO_USER_SECRET                @\cf5 "_1235test$"
+\f1\fs24 \cf0 \
+
+\f0\fs28 \cf4 #define     AUTO_USER_PASSWORD              @\cf5 "12345"
+\f1\fs24 \cf0 \
+\
+
+\f0\fs28 \cf4 #define     MESSAGE_SENDING                 \cf6 5
+\f1\fs24 \cf0 \
+
+\f0\fs28 \cf4 #define     MESSAGE_UNDELIVERED             \cf6 0
+\f1\fs24 \cf0 \
+
+\f0\fs28 \cf4 #define     MESSAGE_PENDING                 \cf6 1
+\f1\fs24 \cf0 \
+
+\f0\fs28 \cf4 #define     MESSAGE_DELIVERED               \cf6 2
+\f1\fs24 \cf0 \
+
+\f0\fs28 \cf4 #define     MESSAGE_SEEN                    \cf6 3
+\f1\fs24 \cf0 \
+
+\f0\fs28 \cf4 #define     MESSAGE_DELETED                 \cf6 11
+\f1\fs24 \cf0 \
+
+\f0\fs28 \cf4 #define     MY_MESSAGE_TO_GROUP             \cf6 10
+\f1\fs24 \cf0 \
+\
+\
+\
+
+\f0\fs28 \cf4 #define     ACTION_TYPE_IGNORE              \cf6 1
+\f1\fs24 \cf0 \
+
+\f0\fs28 \cf4 #define     ACTION_TYPE_ACCEPT              \cf6 2
+\f1\fs24 \cf0 \
+
+\f0\fs28 \cf4 #define     ACTION_TYPE_REJECT              \cf6 3
+\f1\fs24 \cf0 \
+\
+
+\f0\fs28 \cf4 #define     MESSAGE_TYPE_PRIVATE            \cf6 1
+\f1\fs24 \cf0 \
+
+\f0\fs28 \cf4 #define     MESSAGE_TYPE_GROUP              \cf6 2
+\f1\fs24 \cf0 \
+\
+
+\f0\fs28 \cf4 #define     CURRENT_ENVIRONMENT             \cf6 4\cf4  \cf2 // Master=1, Staging=2, Production=3, AWS=4
+\f1\fs24 \cf0 \
+
+\f0\fs28 \cf4 #define     IS_S3_UPLOAD_ACTIVE             \cf6 1\cf4  \cf2 // 0 or 1
+\f1\fs24 \cf0 \
+\
+\
+
+\f0\fs28 \cf2 // Feed
+\f1\fs24 \cf0 \
+\
+
+\f0\fs28 \cf4 #define FEED_BASE_URL                       @\cf5 "http://128.199.74.227:8800"
+\f1\fs24 \cf0 \
+
+\f0\fs28 \cf4 #define FEED_BASE_URL_AWS                   @\cf5 "http://feed.kotha.im"
+\f1\fs24 \cf0 \
+\
+
+\f0\fs28 \cf4 #define API_PATH                            @\cf5 "/api/v1"
+\f1\fs24 \cf0 \
+
+\f0\fs28 \cf2 //#define REALM                             @"jigglemed"
+\f1\fs24 \cf0 \
+
+\f0\fs28 \cf2 //#define AUTO_PASSWORD                     @"$_123456"
+\f1\fs24 \cf0 \
+
+\f0\fs28 \cf4 #define SIGN_UP_OR_LOGIN_URL                API_PATH @\cf5 "/FeedUsers/loginWithAccessToken"
+\f1\fs24 \cf0 \
+
+\f0\fs28 \cf2 //#define LOGIN_URL                         API_PATH @"/ExtendedUsers/login"
+\f1\fs24 \cf0 \
+
+\f0\fs28 \cf4 #define POST_ADDRESS                        API_PATH @\cf5 "/Addresses"
+\f1\fs24 \cf0 \
+
+\f0\fs28 \cf4 #define GET_ADDRESS_BY_ID                   API_PATH @\cf5 "/Addresses/%@"
+\f1\fs24 \cf0 \
+
+\f0\fs28 \cf4 #define CREATE_PROFILE                      API_PATH @\cf5 "/UserProfiles"
+\f1\fs24 \cf0 \
+
+\f0\fs28 \cf4 #define GET_USER_CATEGORIES                 API_PATH @\cf5 "/UserCategories"
+\f1\fs24 \cf0 \
+
+\f0\fs28 \cf4 #define GET_SPECIALTIES                     API_PATH @\cf5 "/Specialties"
+\f1\fs24 \cf0 \
+
+\f0\fs28 \cf4 #define UPLOAD_ATTACHMENT_URL               API_PATH @\cf5 "/Attachments/upload?container=common&purpose=test&added_by=%@&height=%@&width=%@"
+\f1\fs24 \cf0 \
+
+\f0\fs28 \cf2 //#define UPLOAD_ATTACHMENT_WITHOUT_SIZE  BASE_URL API_PATH @"/Attachments/upload?container=common&purpose=test&added_by=%@"
+\f1\fs24 \cf0 \
+
+\f0\fs28 \cf4 #define UPDATE_FEED_PROFILE                 API_PATH @\cf5 "/FeedUsers/%@"
+\f1\fs24 \cf0 \
+
+\f0\fs28 \cf4 #define POST_FEED                           API_PATH @\cf5 "/Feed"
+\f1\fs24 \cf0 \
+
+\f0\fs28 \cf4 #define GET_ALL_FEED                        API_PATH @\cf5 "/Feed?filter=\{ \\"order\\": \\"created DESC\\", \\"include\\":[ \{\\"relation\\":\\"feedReplies\\",\\"scope\\":\{\\"include\\":\\"repliedBy\\"\}\}, \\"createdBy\\"], \\"where\\": \{ \\"approved\\": true \}\}"
+\f1\fs24 \cf0 \
+
+\f0\fs28 \cf4 #define POST_FEED_REPLIES                   API_PATH @\cf5 "/FeedReplies"
+\f1\fs24 \cf0 \
+
+\f0\fs28 \cf4 #define GET_FEED_BY_ID                      API_PATH @\cf5 "/Feed/%@?filter=\{ \\"include\\":[\{\\"relation\\":\\"feedReplies\\",\\"scope\\":\{\\"include\\":\\"repliedBy\\"\}\}, \\"createdBy\\"]\}"
+\f1\fs24 \cf0 \
+
+\f0\fs28 \cf4 #define FEED_DELETE_URL                     API_PATH @\cf5 "/Feed/%@"
+\f1\fs24 \cf0 \
+
+\f0\fs28 \cf4 #define FEED_REPLY_DELETE_URL               API_PATH @\cf5 "/FeedReplies/%@"
+\f1\fs24 \cf0 \
+\
+\
+
+\f0\fs28 \cf4 #endif \cf2 /* Kotha_Prefix_pch */
+\f1\fs24 \cf0 \
+}
