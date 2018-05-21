@@ -1,0 +1,100 @@
+
+1. Open your project in Android Studio
+2. Download the library (using Git, or a zip archive to unzip)
+3. Copy and paste the Library folder (i.e. surveylib) to your project's directory
+4. On the root of your project directory, in settings.gradle:
+
+	//include ":app", ":lib_dir_name" 
+	//or,
+	//include ":app", ":all_lib_dir_name:main_lib_dir_name" 
+
+	i.e.
+
+	include ':app', ':surveylib'
+
+5. Gradle clean & build/close the project and reopen it.
+6. Edit your project's build.gradle (Module:app) to add this in the "depencies" section:
+		
+		dependencies {
+		//...
+		//.......blabla....
+		    compile project(':surveylib')
+		}
+
+    i.e.
+
+    dependencies {
+	    implementation fileTree(dir: 'libs', include: ['*.jar'])
+	    implementation 'com.android.support:appcompat-v7:26.1.0'
+	    implementation 'com.android.support.constraint:constraint-layout:1.0.2'
+	    testImplementation 'junit:junit:4.12'
+	    androidTestImplementation 'com.android.support.test:runner:1.0.1'
+	    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.1'
+	    compile project(':surveylib')
+	
+	}
+
+7. If there's an error like this:
+
+" No service of type Factory available in ProjectScopeServices " then,
+
+In build.gradle (Module:project), add this:
+  dependencies {
+        classpath 'com.android.tools.build:gradle:3.0.1'
+        
+
+        // NOTE: Do not place your application dependencies here; they belong
+        // in the individual module build.gradle files
+
+        classpath 'com.github.dcendents:android-maven-gradle-plugin:1.4.1'
+    }
+
+or, if previous one doesn't work:
+
+  dependencies {
+        classpath 'com.android.tools.build:gradle:2.2.2'
+    	classpath 'com.github.dcendents:android-maven-gradle-plugin:1.4.1'
+    }
+
+8. You're done. Now edit whatever you link in both app directory or library (i.e. surveylib) directory
+
+9. At the end of this process, there will be 3 main portions if "Anrdoid" 
+
+Links:
+https://stackoverflow.com/questions/38825451/no-service-of-type-factory-available-in-projectscopeservices
+https://github.com/MagicMicky/FreemiumLibrary/wiki/Import-the-library-in-Android-Studio
+
+In Markdown Format:
+
+To import the library to Android Studio, there are two methods that can work.
+
+## Method 1:
+1. Open your project in Android Studio
+2. Download the library (using Git, or a zip archive to unzip)
+3. Create a folder "subProject" in your project
+4. Copy and paste the FreemiumLibrary folder to your subProject folder
+5. On the root of your project directory create/modify the settings.gradle file. It should contain something like the following:
+```
+include 'MyApp', ':subProject:FreemiumLibrary'
+```
+6. gradle clean & build/close the project and reopen/re-import it.
+7. Edit your project's build.gradle to add this in the "depencies" section:
+```
+dependencies {
+//...
+    compile project(':subProject:FreemiumLibrary')
+}
+```
+11. Edit your App Activities to extend AdsFragmentActivity instead of Activity.
+12. Edit the library if you want to [use it with ActionBarCompat](https://github.com/MagicMicky/FreemiumLibrary/wiki/Tips#use-freemiumlibrary-with-actionbarcompat)
+
+## Method 2:
+1. Open your project in Android Studio
+2. Download the library (using Git, or a zip archive to unzip)
+3. Go to File > Import Module and import the library as a module
+4. Right-click your app in project view and select "Open Module Settings"
+5. Click the "Dependencies" tab and then the '+' button
+6. Select "Module Dependency"
+7. Select "Freemium Library" (not Freemium Library Project)
+8. Modify your App Activities to extend AdsFragmentActivity instead of Activity.
+9. Modify the library if you want to [use it with ActionBarCompat](https://github.com/MagicMicky/FreemiumLibrary/wiki/Tips#use-freemiumlibrary-with-actionbarcompat)
